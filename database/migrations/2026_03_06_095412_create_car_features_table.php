@@ -12,7 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('car_features', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('car_id')->primary();
+            $table->boolean('air_conditioning')->default(false);
+            $table->boolean('leather_seats')->default(false);
+            $table->boolean('sunroof')->default(false);
+            $table->boolean('power_windows')->default(false);
+            $table->boolean('bluetooth')->default(false);
+            $table->boolean('power_doors_locks')->default(false);
+            $table->boolean('cruise_control')->default(false);
+            $table->boolean('remote_start')->default(false);
+            $table->boolean('gps_navigation')->default(false);
+            $table->boolean('heated_seats')->default(false);
+            $table->boolean('climate_control')->default(false);
+            $table->boolean('rear_parking_sensors')->default(false);
             $table->timestamps();
         });
     }
