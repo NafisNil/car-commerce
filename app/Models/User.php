@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function favouredCars(){
+        return $this->belongsToMany(Car::class, 'favorite_cars', 'user_id', 'car_id')->withTimestamps();
+    }
 }

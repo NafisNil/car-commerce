@@ -8,4 +8,7 @@ class FuelType extends Model
 {
     //
     protected $fillable = ['name'];
+    public function cars(){
+        return $this->hasMany(Car::class, 'fuel_type_id', 'id');
+    }
 }
